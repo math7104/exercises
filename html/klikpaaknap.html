@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercises</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #box,
+        #bax {
+            width: 200px;
+            height: 200px;
+            background-color: wheat;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        button {
+            font-size: 2rem;
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button id="klik">klik</button>
+
+    <button id="slet">
+        slet
+    </button>
+    <button id="html">
+        html
+    </button>
+    <button id="slet">
+        flyt
+    </button>
+
+    <div id="box"></div>
+    <div id="bax"></div>
+
+
+    <script>
+
+  const klik = document.querySelector("#klik");
+    const box = document.querySelector("#box");
+    const slet = document.querySelector("#slet");
+    const html = document.querySelector("#html");
+    const bax = document.querySelector("#bax");
+    const flyt = document.querySelector("#flyt");
+
+
+
+
+    klik.addEventListener("click", doSomething);
+
+    function doSomething(){
+    box.textContent="Klik";
+
+    slet.addEventListener("click", sletSomething);
+    }
+
+    function sletSomething(){
+        box.textContent="";
+
+    html.addEventListener("click", htmlSomething);
+    }
+
+    function htmlSomething() {
+        box.innerHTML="<h1>blah blah blah</h1><p>Mille er dum</p>";
+
+    flyt.addEventListener("click", flytSomething);
+    }
+
+    function flytSomething(){
+        let boxtekst = box.innerHTML;
+        console.log(boxtekst);
+        bax.innerHTML=boxtekst;
+        box.textContent="";
+    }
+    </script>
+</body>
+
+</html>
